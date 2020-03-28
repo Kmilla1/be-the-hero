@@ -3,6 +3,8 @@ const express = require('express');
 /* importando o arquivo routes */
 const routes = require('./routes');
 
+const cors = require('cors');
+
 /* instanciando a aplicação */
 const app = express();
 
