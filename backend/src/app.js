@@ -3,6 +3,7 @@ const express = require('express');
 /* importando o arquivo routes */
 const routes = require('./routes');
 
+const { errors } = require('celebrate');
 const cors = require('cors');
 
 /* instanciando a aplicação */
@@ -14,6 +15,7 @@ app.use(cors());
 /* informar o express que usaremos o json para o corpo das requisições */
 app.use(express.json());
 app.use(routes);
+app.use(errors());
 /**
  * app.'get' -> get referece ao metodo HTTP get
  * GET: busca uma informação do back-end 
@@ -40,4 +42,6 @@ app.use(routes);
  *  */ 
 
 /* aplciação escute a porta 3333. Essa porta foi usada por padrão para node */
-app.listen(3333); 
+//app.listen(3333); 
+
+module.exports = app;
